@@ -55,6 +55,41 @@ Please see the [documentation](https://arrow.apache.org/adbc/main/driver/install
 The core API definitions can be read in `adbc.h`.
 User documentation can be found at https://arrow.apache.org/adbc
 
+## Benchmark
+In `rust/adbc-cli` you can run `./run_all_benchmarks.sh` (which will build for release target) and `benchmark_with_hyperfine.sh` (which will get measurements)
+
+```
+==========================================
+Benchmarking with hyperfine
+Query: SELECT 1 as test
+Profile: prod
+==========================================
+
+1. Benchmarking ADBC driver...
+Benchmark 1: /arrow-adbc/rust/target/release/adbc-cli --config config.example.yaml benchmark --query 'SELECT 1 as test' --client adbc --iterations 1 --profile prod
+  Time (mean ± σ):      1.100 s ±  0.094 s    [User: 0.052 s, System: 0.030 s]
+  Range (min … max):    0.995 s …  1.299 s    10 runs
+ 
+
+2. Benchmarking snowflake-api (Arrow format)...
+Benchmark 1: /arrow-adbc/rust/target/release/adbc-cli --config config.example.yaml benchmark --query 'SELECT 1 as test' --client snowflake-api-arrow --iterations 1 --profile prod
+  Time (mean ± σ):     721.5 ms ±  53.1 ms    [User: 84.8 ms, System: 24.7 ms]
+  Range (min … max):   657.4 ms … 813.1 ms    10 runs
+ 
+
+3. Benchmarking snowflake-api (JSON format)...
+Benchmark 1: /arrow-adbc/rust/target/release/adbc-cli --config config.example.yaml benchmark --query 'SHOW TABLES' --client snowflake-api-json --iterations 1 --profile prod
+  Time (mean ± σ):      1.288 s ±  0.204 s    [User: 0.083 s, System: 0.022 s]
+  Range (min … max):    1.007 s …  1.711 s    10 runs
+ 
+
+==========================================
+All benchmarks completed!
+==========================================
+```
+
+Overall lesson is that Snowflake is slow / has a lot of latency, regardless of client. (may also be location-related)
+
 ## Development and Contributing
 
 For detailed instructions on how to build the various ADBC libraries, see [CONTRIBUTING.md](CONTRIBUTING.md).

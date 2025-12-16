@@ -1,0 +1,46 @@
+prod:
+  type: snowflake
+  account: FRDMZMO-XHB72082
+  user: AIRBYTE_USER
+  private_key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDEZC0KLMa30pCI
+    0/OsJ8zByz0WibGsKHKPVkQwyMziSt6o+ieMwhX69gvOqW0r6J3zigEcdU+v5SeX
+    oYrJx3f3Qjpt1Lu3RPvBozCAOE/hBO33Fed46R0m+ckL2wYEP+vBthsr3L/Pjp6o
+    A7ScT30bfLcL9+xcJknbAaDIOXIIblP6UqGmCG12FCSyBFyTegnPUq4oHtIXMFAA
+    x/98ZzbrsosQXKLoynU5XiwiRGm8imrtBUN5CBUwD4SYiCoxScvBlysdmjRF0Nyu
+    rQu7RB/3HIqBN/6gH8SFgclL+1oitpVKCmFh7TB7nDY/n8L4tF6KKGJcv5IEqy4r
+    8FrhsxAlAgMBAAECggEAFfvArurkM592XlqbZCHwYaEGbYdsRAEjEbhuWaegh5Qp
+    6HBYDQGMxFLWb4O3nLqlM6W3CiB3kxDrpaWHi56wZxUaxUCS4qjuJXbG7xNenamX
+    mZjyGC6//KTpRFJ4EfG1yjFASWCkd+9XAyenB/g94N3M/6H46ze9/K3p+X+0rAy7
+    L3P7K+p2QiGKB5rVq9wczy38ahLgC0wIuGZ1cxMGEffGnQBRe+gU2k7dEz8PmWz1
+    aYSkKVLK2arm6IQq43bFFibB9mx6JXlHHIwKgdaKCxJgVf0qO9GHTTVEV2xuRGdd
+    jOgP45S80gJuH6GE/A6d6YuzZNWkREfDsQ4GXjIa4QKBgQDygXY1Idx2mNoUoC93
+    t8hl4Rj+Cq0zASJHWN5C4j9bGAHL5iO0zwZd1u5oPH1/iGk0YCd+zgnl7418Mc34
+    vrTEEhSwsvMb90E4Ey1cCqkE2EMo662h59LOH7HQR/y0mCdfIazB7sEbPShR3vIy
+    Tu/zD2QQklA+ZkFWTufHmInAlwKBgQDPUc5frZJYInfkwhkbV5Vrs8fwmfqe3upw
+    WlUDdUngrYTlhhtkCupPsZdt1tYrg0Fbu7IE8sbDVhUizaJYQ+cWT1cz4ni7jdBA
+    LoMRwMLkWMM1LuSG1yhIPSxTBjN9lzRpp8BIOKn5plSeysaHiPqCpSUE///mHdqh
+    HgU+1CwQowKBgAihCq/BULL3pWrueEHuTDcz10vS3W7fL3USeHYwzshTBl1XBxY7
+    96IHL9yNqnmLRRMUCNO+SSPhbktpCkc7ofsIGaxf8b6hAbUZGZgY2QLPHzSpjjgg
+    o6OqBQ3AQgG7GEuOSzNrZ3uspW6kXEHmBSvE9G6ShkByKwkDLcQwbVZpAoGBAMiN
+    lJyN5jIINf8/nNYMZeloYxRngEBL2HKTkAXmYm9MrHD0yG6A+KXbYGfLGifBs2ow
+    KkgLKygvkAa48kF8foHggrUYcj7NMxXDaNu1o1MOYtiB4mRmovsu4j/2kbz+lp9W
+    vfWfix6MPvPVqTPX2K6lXyh1FXHgk2ylA+IBkhcNAoGAavzBxiddQpibLi9uzLKj
+    s508P2+WcWEnseyKE+vPpymy1M6uK1fE5TJSCzp67SEk49Cki+fKJMmSNXVDPlSK
+    LeA8DwSe4QKadAk3xO1fViC4gJOTOjiUlvpYLlFh7WZU0NMLabePvqGZnOKTuuET
+    G9X3EnBLXX2GVj8k/5+LWeY=
+    -----END PRIVATE KEY-----
+  role: AIRBYTE_ROLE
+  warehouse: ANALYTICS_WAREHOUSE
+  database: PROJECT_ANALYTICS
+  # schema: SHOULDNEVERHAPPEN
+  threads: 4
+  client_session_keep_alive: false
+  connect_retries: 0
+  connect_timeout: 10
+  retry_on_database_errors: false
+  retry_all: false
+  reuse_connections: true
+
+
